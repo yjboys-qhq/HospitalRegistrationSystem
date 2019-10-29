@@ -1,0 +1,18 @@
+﻿<Page x:Class="WpfApp1.about"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="about">
+
+    <Grid>
+        <Label Content="关于软件" HorizontalAlignment="Left" Margin="85,42,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
+        <Label Content="此软件可用于学习和非商业化用途，软件中还存在着些许不足，" HorizontalAlignment="Left" Margin="140,145,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="如用问题希望可以指出，谢谢。" HorizontalAlignment="Left" Margin="85,200,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="开发时间：2018年  软件最终解释权归本人所有" HorizontalAlignment="Left" Margin="318,330,0,0" VerticalAlignment="Top" RenderTransformOrigin="5,1.154" FontSize="18"/>
+
+    </Grid>
+</Page>

@@ -1,0 +1,45 @@
+﻿<Page x:Class="WpfApp1.Page2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page2">
+
+    <Grid Background="White">
+        <Label Content="IC卡管理系统" HorizontalAlignment="Left" Margin="308,28,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <Grid HorizontalAlignment="Left" Height="81" Margin="10,73,0,10" VerticalAlignment="Top" Width="790">
+            <Label Content="就诊卡卡号：" HorizontalAlignment="Left" Height="33" Margin="10,21,0,0" VerticalAlignment="Top" Width="112" FontSize="16"/>
+            <TextBox x:Name="cardNo" HorizontalAlignment="Left" Height="23" Margin="127,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="223"/>
+            <Label Content="当前余额：" HorizontalAlignment="Left" Height="27" Margin="373,21,0,0" VerticalAlignment="Top" Width="73"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="446,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Foreground="Red" IsEnabled="False" Name="balancebox"/>
+            <Button x:Name="query_btn" Content="查询" HorizontalAlignment="Left" Height="33" Margin="620,21,0,0" VerticalAlignment="Top" Width="118" Click="query_btn_Click"/>
+        </Grid>
+        <TabControl HorizontalAlignment="Left" Height="265" Margin="46,154,0,0" VerticalAlignment="Top" Width="690">
+            <TabItem Header="充值">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="49*"/>
+                        <ColumnDefinition Width="635*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="充值金额：" HorizontalAlignment="Left" Height="31" Margin="34,37,0,0" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="charge_amount_txtbox" HorizontalAlignment="Left" Height="21" Margin="159,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="429" LostFocus="charge_amount_LostFocus" MaxLength="5" Grid.Column="1" >
+
+                    </TextBox>
+                    <Label Content="用户付款：" HorizontalAlignment="Left" Height="32" Margin="34,68,0,0" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="2"/>
+                    <Label Content="找零：" HorizontalAlignment="Left" Height="29" Margin="34,104,0,0" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="paid_textbox" HorizontalAlignment="Left" Height="21" Margin="159,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="429" Foreground="Red" LostFocus="paid_textbox_LostFocus" MaxLength="5" Grid.Column="1"/>
+                    <TextBox x:Name="change_texbox" HorizontalAlignment="Left" Height="21" Margin="159,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="429" Foreground="Lime" MaxLength="5" Grid.Column="1"/>
+                    <Button Content="充值" HorizontalAlignment="Left" Height="50" Margin="227,156,0,0" VerticalAlignment="Top" Width="134" FontSize="16" FontWeight="Bold" Click="Button_Click" IsEnabled="False" x:Name="queryBtn" Grid.Column="1"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="退费">
+                <Grid Background="#FFE5E5E5">
+                    <Button Content="退费" HorizontalAlignment="Left" Height="76" Margin="224,74,0,0" VerticalAlignment="Top" Width="221" Name="refund_btn" Click="refund_btn_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

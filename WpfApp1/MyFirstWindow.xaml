@@ -1,0 +1,154 @@
+﻿<Fluent:RibbonWindow
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:Fluent="urn:fluent-ribbon"
+                     xmlns:System="clr-namespace:System;assembly=mscorlib" x:Name="win" x:Class="MyFirstRibbonProject.MyFirstWindow"
+                     Title="综合挂号系统" 
+                     Width="800" 
+                     Height="600" Closing="RibbonWindow_Closing" WindowStartupLocation="CenterScreen" >
+    <Fluent:RibbonWindow.Resources>
+        <System:String x:Key="Object1">/img/IC.ico</System:String>
+    </Fluent:RibbonWindow.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Fluent:Ribbon Grid.Row="0" Grid.ColumnSpan="4">
+            <!--Backstage-->
+            <Fluent:Ribbon.Menu>
+                <Fluent:StartScreen>
+                    <Fluent:StartScreenTabControl>
+                        <Fluent:StartScreenTabControl.LeftContent>
+                            <StackPanel Orientation="Vertical">
+                                <Label Content="StartScreen"
+                    FontSize="48"
+                    Foreground="{DynamicResource Fluent.Ribbon.Brushes.IdealForegroundColorBrush}" />
+                            </StackPanel>
+                        </Fluent:StartScreenTabControl.LeftContent>
+
+                        <Fluent:StartScreenTabControl.RightContent>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock VerticalAlignment="Center"
+                        HorizontalAlignment="Center"><Run Text="You can close the start screen by either clicking the button below or by pressing ESC"/></TextBlock>
+                                <Fluent:Button HorizontalAlignment="Center"
+                            IsDefinitive="True" Header="Close start screen"/>
+                            </StackPanel>
+                        </Fluent:StartScreenTabControl.RightContent>
+                    </Fluent:StartScreenTabControl>
+                </Fluent:StartScreen>
+            </Fluent:Ribbon.Menu>
+
+            <!--Tabs  主页-->
+            <Fluent:RibbonTabItem Header="主页">
+                <Fluent:RibbonGroupBox Header="功能管理">
+                    <Fluent:Button Header="建档系统" Click="Button_Click_archives" Width="80">
+                        <Fluent:Button.LargeIcon>
+                            <Image Source="img/archives.png" Stretch="Fill" ></Image>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="挂号系统" Click="Button_Click_1" Width="80">
+                        <Fluent:Button.LargeIcon>
+                            <Image Source="img/guahao.jpg" Stretch="Fill" ></Image>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="IC卡管理"  Click="Button_Click" Width="80" >
+                        <Fluent:Button.LargeIcon>
+                            <Image Source="img/IC_card.png" Stretch="Fill" />
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="预约管理"  Click="Button_Click_wait" Width="80" >
+                        <Fluent:Button.LargeIcon>
+                            <Image Source="img/wait.png" Stretch="Fill" />
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="退出系统"  Click="Button_Click_logout" Width="80" >
+                        <Fluent:Button.LargeIcon>
+                            <Image Source="img/logout.ico" Stretch="Fill" />
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+
+            <!--Tabs 数据-->
+            <Fluent:RibbonTabItem Header="数据">
+                <Fluent:RibbonGroupBox Header="图表功能">
+                    <Fluent:Button Header="柱状图" Click="Button_Click_bar" Width="80">
+                        <Fluent:Button.LargeIcon>
+                            <Image Source="img/bars.png" Stretch="Fill" ></Image>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+
+                    <Fluent:Button Header="饼图" Click="Button_Click_pie" Width="80">
+                        <Fluent:Button.LargeIcon>
+                            <Image Source="img/pie.png" Stretch="Fill" ></Image>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+
+                    <Fluent:Button Header="折线图" Click="Button_Click_spline" Width="80">
+                        <Fluent:Button.LargeIcon>
+                            <Image Source="img/spline.png" Stretch="Fill" ></Image>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+
+                    <Fluent:Button Header="面积图" Click="Button_Click_area" Width="80">
+                        <Fluent:Button.LargeIcon>
+                            <Image Source="img/area.png" Stretch="Fill" ></Image>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+
+                    <Fluent:Button Header="散点图" Click="Button_Click_point" Width="80">
+                        <Fluent:Button.LargeIcon>
+                            <Image Source="img/point.png" Stretch="Fill" ></Image>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+
+            <!--Tabs 导出csv-->
+            <Fluent:RibbonTabItem Header="导出">
+                <Fluent:RibbonGroupBox Header="导出功能">
+                    <Fluent:Button Header="导出数据" Click="Button_Click_saveTocsv" Width="80">
+                        <Fluent:Button.LargeIcon>
+                            <Image Source="img/csv.png" Stretch="Fill" ></Image>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="导出数据" Click="Button_Click_saveToexcel" Width="80">
+                        <Fluent:Button.LargeIcon>
+                            <Image Source="img/excel.png" Stretch="Fill" ></Image>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+
+            <!--Tabs 帮助-->
+            <Fluent:RibbonTabItem Header="帮助">
+                <Fluent:RibbonGroupBox Header="辅助功能">
+                    <Fluent:Button Header="帮助" Click="Button_Click_help" Width="80">
+                        <Fluent:Button.LargeIcon>
+                            <Image Source="img/help.png" Stretch="Fill" ></Image>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="关于"  Click="Button_Click_about" Width="80" >
+                        <Fluent:Button.LargeIcon>
+                            <Image Source="img/about.png" Stretch="Fill" />
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+        </Fluent:Ribbon>
+        <!--Tabs 容器 -->
+        <Grid x:Name="grid1" Grid.Row="1" Grid.ColumnSpan="4">
+            <Viewbox>
+                <Grid>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.ColumnSpan="1">
+                        <ScrollViewer.Content>
+                            <Frame Margin="0,0,0,0" NavigationUIVisibility="Hidden" Name="MainFrame" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" />
+                        </ScrollViewer.Content>
+                    </ScrollViewer>
+                </Grid>
+            </Viewbox>
+        </Grid>
+    </Grid>
+</Fluent:RibbonWindow>

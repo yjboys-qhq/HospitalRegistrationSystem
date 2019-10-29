@@ -1,0 +1,52 @@
+﻿<Page x:Class="WpfApp1.Page3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page1">
+
+    <Grid Background="White" Name="register" Initialized="register_Initialized">
+        <!--标题-->
+        <Label Content="挂号系统" Margin="349,28,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" HorizontalAlignment="Left"/>
+        <!--病人信息-->
+        <Grid HorizontalAlignment="Left" Height="135" Margin="24,88,0,0" VerticalAlignment="Top" Width="766">
+            <Label Content="姓名：" HorizontalAlignment="Right" Margin="0,5,698,0" VerticalAlignment="Top" RenderTransformOrigin="-0.674,-1.862" FontSize="16"/>
+            <TextBox HorizontalAlignment="Right" Height="20" Margin="0,10,563,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="130" RenderTransformOrigin="-0.025,0.609" Name="name" IsEnabled="False"/>
+            <Label Content="就诊卡号：" HorizontalAlignment="Left" Margin="235,5,0,0" VerticalAlignment="Top" RenderTransformOrigin="-25.9,-9.865" FontSize="16" />
+            <TextBox HorizontalAlignment="Left" Margin="325,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="322" x:Name="cardNo" Height="20" KeyDown="cardNo_KeyDown"/>
+            <Label Content="性别：" HorizontalAlignment="Left" Height="34" Margin="9,49,0,0" VerticalAlignment="Top" Width="56" FontSize="16" RenderTransformOrigin="0.518,0.618"/>
+            <Button x:Name="read_btn" Content="读取" HorizontalAlignment="Left" Height="35.76" Margin="574,89.72,0,0" VerticalAlignment="Top" Width="73" Click="read_Button_Click_1"/>
+            <Label Content="年龄：" HorizontalAlignment="Left" Height="34" Margin="250,49,0,0" VerticalAlignment="Top" Width="70" FontSize="16"/>
+            <TextBox HorizontalAlignment="Left" Height="20" Margin="325,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Name="age" IsEnabled="False"/>
+            <TextBox HorizontalAlignment="Left" Height="20" Margin="72,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.492,0.426" Name="gender" IsEnabled="False"/>
+            <Label Content="建档日期：" HorizontalAlignment="Left" Height="31" Margin="9,83,0,0" VerticalAlignment="Top" Width="85" FontSize="16"/>
+            <DatePicker HorizontalAlignment="Left" Margin="94,88,0,0" VerticalAlignment="Top" Width="108" SelectedDateFormat="Short" Name="start_date"/>
+            <Label Content="预存款余额：" HorizontalAlignment="Left" Height="29" Margin="221,83,0,0" VerticalAlignment="Top" Width="99" FontSize="16"/>
+            <TextBox HorizontalAlignment="Left" Height="22" Margin="325,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Foreground="Red"  Name="balance" IsEnabled="False"/>
+        </Grid>
+        <!--挂号信息-->
+        <Grid HorizontalAlignment="Left" Height="187" Margin="24,253,0,0" VerticalAlignment="Top" Width="754">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="164*"/>
+                <ColumnDefinition Width="213*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="科室：" HorizontalAlignment="Left" Height="29" Margin="10,10,0,0" VerticalAlignment="Top" Width="58"/>
+            <ComboBox x:Name="Combobox" HorizontalAlignment="Left" Height="20" Margin="56,13,0,0" VerticalAlignment="Top" Width="120"/>
+            <Label Content="号别：" HorizontalAlignment="Left" Height="26" Margin="239,13,0,0" VerticalAlignment="Top" Width="56"/>
+            <RadioButton x:Name="normal" Content="普号" HorizontalAlignment="Left" Margin="295,19,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+            <RadioButton x:Name="special" Content="专家号" HorizontalAlignment="Left" Margin="26,19,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.099,0.286" Grid.Column="1"/>
+            <Button x:Name="query_btn" Content="查询" HorizontalAlignment="Left" Height="29" Margin="149,14,0,0" VerticalAlignment="Top" Width="136" Click="query_Button_Click" Grid.Column="1" IsEnabled="False"/>
+            <Border x:Name="border" BorderBrush="Black" BorderThickness="0" HorizontalAlignment="Left" Height="102" Margin="273,75,0,0" VerticalAlignment="Top" Width="210" MouseLeftButtonDown="Border_MouseLeftButtonDown" Grid.ColumnSpan="2">
+                <TextBlock HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Center" Name="tip" Foreground="#FF2158CD" FontWeight="Bold" FontSize="20" />
+            </Border>
+
+
+        </Grid>
+
+
+
+    </Grid>
+</Page>
